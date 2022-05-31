@@ -14,7 +14,7 @@ upstream_package_name: readthedocs-sphinx-ext
 downstream_package_name: python-readthedocs-sphinx-ext
 
 actions:
-    post-upstream-clone: "wget https://src.fedoraproject.org/rpms/python-readthedocs-sphinx-ext.spec/raw/rawhide/f/python-readthedocs-sphinx-ext.spec -O python-readthedocs-sphinx-ext.spec"
+    post-upstream-clone: "wget https://src.fedoraproject.org/rpms/python-readthedocs-sphinx-ext/raw/rawhide/f/python-readthedocs-sphinx-ext.spec -O python-readthedocs-sphinx-ext.spec"
 
 upstream_project_url: https://github.com/majamassarini/readthedocs-sphinx-ext
 
