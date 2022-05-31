@@ -1,0 +1,29 @@
+# See the documentation for more information:
+# https://packit.dev/docs/configuration/
+
+specfile_path: python-readthedocs-sphinx-ext.spec
+
+# add or remove files that should be synced
+synced_files:
+    - python-readthedocs-sphinx-ext.spec
+    - .packit.yaml
+
+# name in upstream package repository or registry (e.g. in PyPI)
+upstream_package_name: readthedocs-sphinx-ext
+# downstream (Fedora) RPM package name
+downstream_package_name: python-readthedocs-sphinx-ext
+
+actions:
+    post-upstream-clone: "wget https://src.fedoraproject.org/rpms/python-readthedocs-sphinx-ext.spec/raw/rawhide/f/python-readthedocs-sphinx-ext.spec -O python-readthedocs-sphinx-ext.spec"
+
+upstream_project_url: https://github.com/majamassarini/readthedocs-sphinx-ext
+
+jobs:
+- job: copr_build
+  trigger: pull_request
+  metadata:
+    targets: fedora-stable
+- job: copr_build
+  trigger: commit
+  metadata:
+    targets: fedora-stable
